@@ -1,0 +1,395 @@
+<script type="text/javascript">
+
+var contenders = new Array(6);
+var result= new Array(6);
+var imgArray= new Array(6);    
+var a=1;
+var b=1;
+var c=1;
+var d=1;    
+var p=1;
+var q=1;
+var k=-1;
+var l=-1;
+var e=0;
+var f=0;
+var j=0;    
+var counter=1;
+
+
+function reset(){
+    document.getElementById("image1").src= ' ';
+    document.getElementById("image2").src= ' ';
+    document.getElementById("0").innerHTML= 'Choose one of the above categories!';
+    document.getElementById("1").innerHTML= ' ';
+     document.getElementById("2").innerHTML= ' ';
+     document.getElementById("3").innerHTML= ' ';
+     document.getElementById("4").innerHTML= ' ';
+     document.getElementById("5").innerHTML= ' ';
+     document.getElementById("6").innerHTML= ' ';
+    k=-1;
+    l=-1;
+    a=1;
+    b=1;
+    c=1;
+    d=1;    
+    p=1;
+    q=1;
+    k=-1;
+    l=-1;
+    e=0;
+    f=0;    
+    counter=1;
+
+
+    j=1;
+}    
+    
+    
+    
+function actresess(){
+    reset();
+    document.getElementById("0").innerHTML= 'Actresses loaded, Click on any button to start!';
+    contenders[0]= { score:400, name:"Jennifer Lawrance"}
+    contenders[1]= { score:400, name:"Jessica Alba"}
+    contenders[2]= { score:400, name:"Angelina Jolie"}
+    contenders[3]= { score:400, name:"Mila Kunis" }
+    contenders[4]= { score:400, name:"Scarlett Johansson"}
+    contenders[5]= { score:400, name:"Jennifer Aniston" }
+
+    imgArray[0]=new Image();
+    imgArray[0].src= 'images/lawrance.jpg';
+
+    imgArray[1]=new Image();
+    imgArray[1].src= 'images/alba.jpg';    
+
+    imgArray[2]=new Image();
+    imgArray[2].src= 'images/jolie.jpg';
+
+    imgArray[3]=new Image();
+    imgArray[3].src= 'images/kunis.jpg';
+
+    imgArray[4]=new Image();
+    imgArray[4].src= 'images/johansson.jpg';
+
+    imgArray[5]=new Image();
+    imgArray[5].src= 'images/aniston.jpg';
+}
+    
+
+    
+function TVseries(){
+    reset();
+    document.getElementById("0").innerHTML= 'TV Series loaded, Click on any button to start!';
+    contenders[0]= { score:400, name:"Suits"}
+    contenders[1]= { score:400, name:"White Collar"}
+    contenders[2]= { score:400, name:"Breaking Bad"}
+    contenders[3]= { score:400, name:"Sherlock" }
+    contenders[4]= { score:400, name:"F.R.I.E.N.D.S."}
+    contenders[5]= { score:400, name:"Game Of Thrones" }
+
+    imgArray[0]=new Image();
+    imgArray[0].src= 'images/suits.jpg';
+
+    imgArray[1]=new Image();
+    imgArray[1].src= 'images/white collar.jpg';    
+
+    imgArray[2]=new Image();
+    imgArray[2].src= 'images/breaking bad.jpg';
+
+    imgArray[3]=new Image();
+    imgArray[3].src= 'images/sherlock.jpg';
+
+    imgArray[4]=new Image();
+    imgArray[4].src= 'images/friends.jpg';
+
+    imgArray[5]=new Image();
+    imgArray[5].src= 'images/game of thrones.jpg';
+}    
+    
+function superheroes(){
+    reset();
+    document.getElementById("0").innerHTML= 'Superheroes loaded, Click on any button to start!';
+    contenders[0]= { score:400, name:"Superman"}
+    contenders[1]= { score:400, name:"Iron Man"}
+    contenders[2]= { score:400, name:"Batman"}
+    contenders[3]= { score:400, name:"The Hulk" }
+    contenders[4]= { score:400, name:"Captian America"}
+    contenders[5]= { score:400, name:"Spider-man" }
+
+    imgArray[0]=new Image();
+    imgArray[0].src= 'images/superman.jpg';
+
+    imgArray[1]=new Image();
+    imgArray[1].src= 'images/iron man.jpg';    
+
+    imgArray[2]=new Image();
+    imgArray[2].src= 'images/batman.jpg';
+
+    imgArray[3]=new Image();
+    imgArray[3].src= 'images/hulk.jpg';
+
+    imgArray[4]=new Image();
+    imgArray[4].src= 'images/captain america.jpg';
+
+    imgArray[5]=new Image();
+    imgArray[5].src= 'images/spiderman.jpg';
+}    
+    
+function actors(){
+    reset();
+    document.getElementById("0").innerHTML= 'Actors loaded, Click on any button to start!';
+    contenders[0]= { score:400, name:"Robert Downey Jr."}
+    contenders[1]= { score:400, name:"Christian Bale"}
+    contenders[2]= { score:400, name:"Leonardo Dicaprio"}
+    contenders[3]= { score:400, name:"Brad Pitt" }
+    contenders[4]= { score:400, name:"Hugh Jackman"}
+    contenders[5]= { score:400, name:"Matt Damon" }
+
+    imgArray[0]=new Image();
+    imgArray[0].src= 'images/robert.jpg';
+
+    imgArray[1]=new Image();
+    imgArray[1].src= 'images/christian bale.jpg';    
+
+    imgArray[2]=new Image();
+    imgArray[2].src= 'images/leonardo dicaprio.jpg';
+
+    imgArray[3]=new Image();
+    imgArray[3].src= 'images/brad pitt.jpg';
+
+    imgArray[4]=new Image();
+    imgArray[4].src= 'images/hugh jackman.jpg';
+
+    imgArray[5]=new Image();
+    imgArray[5].src= 'images/matt damon.jpg';
+}
+    
+    
+
+    
+    
+function output(){
+   document.getElementById("one").innerHTML='  '+contenders[2].score;
+}   
+  
+function jamana(){
+        
+        for(var i=0; i<contenders.length; i++)
+        {
+            result[i]=contenders[i].score;
+        }
+        result.sort();
+        result.reverse();
+        document.getElementById("0").innerHTML='Your order of preferrence: ';
+            for(var j=0; j<contenders.length; j++)
+            {
+            if(result[0]==contenders[j].score)
+                {
+                  document.getElementById("1").innerHTML=' '+contenders[j].name;
+//                contenders[j].score=contenders[j].score+1; 
+                result[0]=result[0]+2;    
+                }
+                
+                else if(result[1]==contenders[j].score)
+                {
+                  document.getElementById("2").innerHTML=' '+contenders[j].name;
+//                contenders[j].score=contenders[j].score+10;
+                     result[1]=result[1]+2;    
+                }
+                
+                else if(result[2]==contenders[j].score)
+                {
+                  document.getElementById("3").innerHTML=' '+contenders[j].name;
+//                contenders[j].score=contenders[j].score+10;    
+                     result[2]=result[2]+2;    
+                }
+                
+                else if(result[3]==contenders[j].score)
+                {
+                  document.getElementById("4").innerHTML=' '+contenders[j].name;
+//                contenders[j].score=contenders[j].score+10;    
+                     result[3]=result[3]+2;    
+                }
+                
+                else if(result[4]==contenders[j].score)
+                {
+                  document.getElementById("5").innerHTML=' '+contenders[j].name;
+//                contenders[j].score=contenders[j].score+10;    
+                     result[4]=result[4]+2;    
+                }
+                
+                else if(result[5]==contenders[j].score)
+                {
+                  document.getElementById("6").innerHTML=' '+contenders[j].name;
+//                contenders[j].score=contenders[j].score+10;    
+                     result[5]=result[5]+2;    
+                }
+            }
+        
+        
+                
+            
+        
+    }
+    
+    var n=contenders.length;
+    
+function one(x, y){
+    if(x==-1&&y==-1){
+        k=0;
+        l=0;
+        
+        setpic();
+        
+    }
+    
+    else if(counter<(n*(n-1))/2){    
+     d=(contenders[y].score-contenders[x].score)/400;
+
+    c=Math.pow(10,d) ;  
+    a=(1)/(1+10^c);    
+    b=1-a;    
+
+    e=contenders[x].score + 32*(1-a);
+    f=contenders[y].score + 32*(0-b);
+
+    contenders[x].score=e;
+    contenders[y].score=f;    
+    setpic();
+    count();    
+    }
+    
+    else if(counter==n*(n-1)/2){
+        jamana();
+    
+    }
+}
+
+    
+function count(){
+
+    counter++;
+
+}    
+    
+function setpic(){
+            
+    l++;
+        
+        
+    if(l==contenders.length)
+            {
+                k++;
+                l=k;
+            }
+    
+    if(l==k){
+                l++;   
+       }
+//           document.getElementById("one").innerHTML='  '+contenders[k].name;
+    
+    document.getElementById("image1").src= imgArray[k].src;
+
+
+//                document.getElementById("two").innerHTML=' '+contenders[l].name;
+    document.getElementById("image2").src= imgArray[l].src;
+               
+          
+//            counter++;
+    }
+    
+//    if(counter==16){
+//        
+//        jamana();
+////        document.getElementById("output").innerHTML=' '+contenders[0].name +' '+ contenders[0].score;
+//    
+//    
+//    
+//    }
+
+    
+    function setw(p){
+        if(j==1){
+        
+        document.getElementById("0").innerHTML= 'Click on the image that you like more!';
+        
+        }
+   
+        if(p==1){
+         
+        one(k,l);
+           
+        }
+        else if(p==2){
+        one(l,k);
+        }
+        
+    }    
+    
+  
+    
+
+
+</script>
+<head><title>Face off! </title></head>
+<link type="text/css" rel="stylesheet" href="stylesheet.css">
+
+<body>
+<div class="bigEntrance" id="title">
+    <span>F</span>
+    <span>A</span>
+    <span>C</span>
+    <span>E</span>
+    
+    <span>O</span>
+    <span>F</span>
+    <span>F</span>
+    <span>!</span>
+</div>
+    
+<div id= "list">
+    <button onclick="superheroes()">Superheroes</button>
+    <button onclick="TVseries()">TV Series</button>
+    <button onclick="actresess()">Actresses</button>
+    <button onclick="actors()">Actors</button>
+</div>    
+    
+    
+    
+    
+    
+  
+<div id="buttons" class="hatch">    
+    <button type="button" id="one" onclick="setw(1)">
+        <img id="image1">
+    </button>
+    <button id="two" onclick="setw(2)">
+        <img id="image2">
+    </button>    
+</div>
+<!--
+<div id="scores">
+    <div id="score1">
+    </div>
+    <div id="score2">2
+    </div>
+</div>
+-->
+<!--
+    <div id="click">Click on any button to start!    
+    </div>
+-->
+
+<div id="result" >
+    <div id="0">Choose one of the above Categories</div>
+    <div id="1"></div>
+    <div id="2"></div>
+    <div id="3"></div>
+    <div id="4"></div>
+    <div id="5"></div>
+    <div id="6"></div>
+</div>    
+
+
+</body>
